@@ -1,3 +1,6 @@
-let pkgs = import <nixpkgs> {};
-self = import ./default.nix {inherit pkgs; };
-in pkgs.mkShell { buildInputs = with self; [ yo generator-code ]; }
+let
+  pkgs = import <nixpkgs> {};
+  self = import ./nix { inherit pkgs; };
+  combined = pkgs.symlinkJoin { name = "yo-code"; paths = with self; [ yo generator-code pkgs.nodejs-12_x ]; };
+in
+pkgs.mkShell { buildInputs = [ combined ]; }
