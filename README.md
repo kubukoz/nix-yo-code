@@ -1,11 +1,11 @@
 # nix-yo-code
 
-Nix setup for yeoman with the vscode generators.
+Nix flake for yeoman with the vscode generators.
 
 ## Usage
 
 ```shell
-$ nix-shell
+$ nix develop
 # now just use "yo code" anywhere you want
 ```
 
