@@ -15,14 +15,9 @@
           in
           pkgs.mkShell {
             buildInputs = [
-              (pkgs.symlinkJoin {
-                name = "yo-code";
-                paths = [
-                  self.yo
-                  self.generator-code
-                  pkgs.nodejs-12_x
-                ];
-              })
+              self.yo
+              self.generator-code
+              pkgs.nodejs-12_x
             ];
           };
       }
