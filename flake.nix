@@ -15,8 +15,10 @@
               pkgs.nodePackages.yo
               pkgs.nodePackages.generator-code
               pkgs.nodejs-16_x
+              pkgs.yarn
             ];
           };
       }
+
     );
 }
