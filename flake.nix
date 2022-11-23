@@ -10,14 +10,11 @@
       in
       {
         devShell =
-          let
-            self = import ./nix { inherit pkgs; };
-          in
           pkgs.mkShell {
             buildInputs = [
-              self.yo
-              self.generator-code
-              pkgs.nodejs-12_x
+              pkgs.nodePackages.yo
+              pkgs.nodePackages.generator-code
+              pkgs.nodejs-16_x
             ];
           };
       }
